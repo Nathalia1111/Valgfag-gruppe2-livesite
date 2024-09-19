@@ -1,0 +1,1316 @@
+/* --- IMPORTS --- */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* --- VARIABLES --- */
+:root {
+  /* COLORS */
+  --blackColor: #272727;
+  --greyColor: #e6e6e6;
+  --whiteColor: #fdfdfd;
+  --orangeColor: #edba83;
+  --darkGreen: #518962;
+  --mediumGreen: #67a379;
+  --lightGreen: #aac479;
+  --ultraLightGreen: #c3d899;
+}
+
+/* --- UTILLITIES --- */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn {
+  font-family: "Open Sans", sans-serif;
+}
+
+p {
+  font-family: "Noto Sans", sans-serif;
+}
+
+/* Grid */
+main,
+.imagesAndContact {
+  display: grid;
+  grid-template-columns: 40px repeat(9, 1fr) 40px;
+  gap: 20px;
+}
+
+section {
+  grid-column: 3/-3;
+}
+
+/* HEADER */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+header {
+  background-color: var(--darkGreen);
+  padding: 10px 40px;
+  width: 100%;
+  position: fixed;
+}
+
+.header-logo {
+  flex: 1;
+}
+
+.header-ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-ul li {
+  margin: 0;
+}
+
+.header-ul li a {
+  text-decoration: none;
+  color: var(--whiteColor);
+}
+.header-ul li a:hover {
+  text-decoration: underline;
+}
+/* HEADER SLUT */
+
+/* footer */
+footer {
+  background-color: var(--mediumGreen);
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer i,
+footer p {
+  color: var(--whiteColor);
+}
+
+footer p {
+  font-weight: 600;
+}
+
+.socialMedia i {
+  font-size: 3.5rem;
+}
+
+.socialMedia i:nth-child(2) {
+  margin-inline: 15px;
+}
+
+.logo {
+  width: 350px;
+}
+
+.cvr {
+  font-weight: 900;
+}
+
+.icon {
+  margin-right: 10px;
+  margin-top: 17px;
+}
+
+.icon:not(.cvr) {
+  font-size: 1.3rem;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+}
+
+.internatInformation {
+  display: flex;
+  align-items: center;
+}
+
+/* traning side css */
+.traning-main {
+  .hero-dyrpension {
+    background-image: url("../img/Hundepaagras.jpg");
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    padding: 0 2em;
+    padding-bottom: 4em;
+    color: var(--whiteColor);
+    align-items: center;
+  }
+  .hero-dyrpension h1 {
+    margin-left: 180px;
+  }
+  .content-dyrepension {
+    display: flex;
+    align-items: center; /* Justerer billede og tekst på midten af højde */
+    gap: 100px; /* Mellemrum mellem billede og tekst */
+    margin-top: 3rem;
+    align-items: flex-start;
+  }
+
+  .content-dyrepension h2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 3rem;
+    align-items: flex-start;
+    margin: 0;
+  }
+  .content-image-dyrepension {
+    max-width: 450px;
+  }
+
+  /* vores ydelser sektion*/
+  .h2-dyrepension {
+    text-align: center;
+  }
+
+  .info-section-dyrepension {
+    margin-top: 3rem;
+    background-color: #c3d899;
+    padding: 20px;
+    grid-column: 1/-1;
+  }
+
+  .info-grid-dyrepension {
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    gap: 20px;
+    padding-inline: 188px;
+  }
+
+  .info-item-dyrepension {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .info-item-dyrepension img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .info-item-dyrepension p {
+    margin: 0;
+    color: #000;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  /* Style the tab */
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: white;
+  }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    text-decoration: underline;
+  }
+
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #edba83;
+  }
+
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  .tab-content-training {
+    display: flex; /* Brug Flexbox til at arrangere indholdet horisontalt */
+    align-items: flex-start; /* Centrerer indholdet vertikalt */
+  }
+
+  .tab-text {
+    flex: 1; /* Giver tekstcontaineren fleksibilitet til at fylde den tilgængelige plads */
+  }
+
+  .tab-image {
+    max-width: 500px; /* Juster den ønskede maksimale bredde af billedet */
+    margin-left: 20px; /* Tilføj margin til venstre for at give lidt afstand fra teksten */
+  }
+
+  .tab-image img {
+    width: 100%; /* Billedet tilpasser sig containerens bredde */
+    height: auto; /* Bevarer billedets proportioner */
+    display: block; /* Forhindrer mellemrum nedenfor billedet */
+  }
+  .taps {
+    margin-bottom: 3rem;
+  }
+}
+
+/* dyrepension side css */
+.dyrepension-main {
+  .hero-dyrpension {
+    background-image: url("../img/Hund_paatrand.jpg");
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    padding: 0 2em;
+    padding-bottom: 4em;
+    color: var(--whiteColor);
+    align-items: center;
+  }
+  .hero-dyrpension h1 {
+    margin-left: 180px;
+  }
+  .content-dyrepension {
+    display: flex;
+    align-items: center; /* Justerer billede og tekst på midten af højde */
+    gap: 100px; /* Mellemrum mellem billede og tekst */
+    margin-top: 3rem;
+    align-items: flex-start;
+  }
+
+  .content-dyrepension h2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 3rem;
+    align-items: flex-start;
+    margin: 0;
+  }
+  .content-image-dyrepension {
+    max-width: 450px;
+  }
+
+  /* vores ydelser sektion*/
+  .h2-dyrepension {
+    text-align: center;
+  }
+
+  .info-section-dyrepension {
+    margin-top: 3rem;
+    background-color: #c3d899;
+    padding: 20px;
+    grid-column: 1/-1;
+  }
+
+  .info-grid-dyrepension {
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    gap: 20px;
+    padding-inline: 188px;
+  }
+
+  .info-item-dyrepension {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .info-item-dyrepension img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .info-item-dyrepension p {
+    margin: 0;
+    color: #000;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  /* Priser sektion */
+
+  .line {
+    width: 299px;
+  }
+  .line-dyrpension {
+    display: flex;
+    align-items: center;
+  }
+  .hundepriser .line {
+    height: 2px;
+    background-color: #000;
+    margin-left: 5px;
+  }
+
+  /* kontakt formular */
+
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  input[type="submit"] {
+    background-color: #edba83;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #67a379;
+  }
+
+  .container {
+    flex: 1;
+    background-color: #aac479;
+    padding: 20px;
+    max-width: 35%;
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+  }
+
+  .hundepriser {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 3rem;
+  }
+  .kontaktogpriser {
+    flex: 1;
+    max-width: 50%;
+  }
+  .kontaktogpriser h2 {
+    margin: 0;
+  }
+
+  /*ENTRY POINTS */
+
+  .treaningFEP {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.76),
+        rgba(0, 0, 0, 0)
+      ),
+      url(../img/tokattesover.jpg);
+    background-position: center top;
+  }
+
+  .vejledningFEP {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.76),
+        rgba(0, 0, 0, 0)
+      ),
+      url(../img/mangedyr.jpg);
+    background-position: center;
+  }
+
+  .forsideFEP {
+    display: flex;
+    gap: 20px;
+  }
+
+  .forsideFEP > div {
+    display: flex;
+    width: 100%;
+    gap: 50px;
+  }
+
+  .mainFocusEntryPoint {
+    width: 50%;
+    height: 420px;
+  }
+
+  .smallFocusEntryPoint {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .focusEntryPoint {
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--whiteColor);
+    position: relative;
+    padding: 15px;
+  }
+
+  .forsideFEP h3 {
+    font-size: var(--textSizeH3);
+    position: absolute;
+    bottom: 80px;
+    left: 25px;
+  }
+
+  .forsideFEP p {
+    font-size: var(--textSizeBase);
+    position: absolute;
+    bottom: 60px;
+    left: 25px;
+  }
+
+  .forsideFEP .btn {
+    position: absolute;
+    bottom: 20px;
+    left: 16px;
+  }
+  .btn {
+    padding-inline: 25px;
+    padding-block: 10px;
+    background-color: var(--orangeColor);
+    color: var(--blackColor);
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: var(--textSizeBase);
+    font-weight: 700;
+  }
+}
+
+/* Hund side css */
+.hund-main {
+  :root {
+    /* TEXT SIZE */
+    --textSizeH1: 4.4rem;
+    --textSizeH2: 2.5rem;
+    --textSizeH3: 2.2rem;
+    --textSizeBase: 1.9rem;
+  }
+  /* hund */
+  h1 {
+    font-size: 2rem;
+  }
+
+  .imagesAndContact {
+    align-items: start;
+  }
+
+  .dogImages {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .bigImg img {
+    width: 520px;
+    height: 470px;
+    object-fit: cover;
+  }
+
+  .smallImgs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 10px;
+  }
+
+  .smallImgs img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .container {
+    grid-column: 8 / 12;
+    background-color: #aac479;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+  }
+
+  /* kontakt formular */
+
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  input[type="submit"] {
+    background-color: #edba83;
+    color: var(--blackColor);
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #67a379;
+  }
+
+  #firstname,
+  #number,
+  #email,
+  #subject {
+    font-family: "Noto Sans", sans-serif;
+  }
+
+  .hundepriser {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 3rem;
+  }
+  .kontaktogpriser {
+    flex: 1;
+    max-width: 50%;
+  }
+  .kontaktogpriser h2 {
+    margin: 0;
+  }
+
+  /* dog information */
+  .specificDogInformationContainer h4,
+  .specificDogInformationContainer p {
+    font-size: 1.1rem;
+  }
+
+  .dogMetaData {
+    display: flex;
+  }
+
+  .dogMetaData div {
+    margin-right: 50px;
+  }
+
+  .dogMetaData div h4 {
+    margin-bottom: 0px;
+  }
+
+  .dogMetaData div p {
+    margin-top: 5px;
+  }
+
+  .dogMetaData div h4:nth-of-type(1) {
+    margin-top: 0px;
+  }
+
+  .beskrivelse {
+    margin-right: 450px;
+    text-wrap: normal;
+  }
+
+  .beskrivelse p {
+    margin-top: 0px;
+  }
+
+  .beskrivelse h4 {
+    margin-bottom: 5px;
+  }
+
+  /* Dyr til adoption */
+  .forsideDyrTilAdoption {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+  .forsideDyrTilAdoption .titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .titles a {
+    text-decoration: none;
+    color: var(--blackColor);
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+  }
+
+  .animalCards {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .animalCard {
+    background-color: var(--whiteColor);
+    width: 270px;
+    line-height: 0;
+  }
+
+  .animalCard h3 {
+    margin-top: 5px;
+    margin-bottom: 4px;
+  }
+
+  .animalCard p {
+    margin-top: 1px;
+  }
+
+  .animalCard p,
+  .animalCard h3 {
+    margin-left: 10px;
+  }
+
+  .animalCard img {
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .animalCard a {
+    color: var(--blackColor);
+    text-decoration: none;
+  }
+
+  .gender {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .gender i {
+    margin-left: 5px;
+  }
+
+  .animalCard .animalCardInfo {
+    padding: 5px 6px;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-width: 1px;
+    border-color: var(--blackColor);
+    line-height: 20px;
+  }
+
+  .forsideDyrTilAdoption h2 {
+    margin-bottom: 0px;
+  }
+
+  .titles p {
+    margin-top: 5px;
+    font-size: 1.2rem;
+  }
+}
+
+/* adoptionprocess css */
+
+.adoptionprocess-main {
+  /* HEADER */
+  .hero-process {
+    background-image: url("../img/heroProcess.jpg");
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    padding: 0 2em;
+    padding-bottom: 4em;
+    color: var(--whiteColor);
+    align-items: center;
+  }
+
+  .hero-process h1 {
+    margin-left: 180px;
+  }
+
+  /* INTROTEKST */
+  .introProcess {
+    display: flex;
+  }
+
+  .introProcess p {
+    width: 65%;
+  }
+
+  /* NAVIGATIONS MENU */
+  .adoptionFelt a,
+  .adoptionsprocessFelt a,
+  .vejledningFelt a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .adoptionFelt,
+  .adoptionsprocessFelt,
+  .vejledningFelt {
+    height: 100px;
+    width: 300px;
+    color: var(--whiteColor);
+  }
+
+  .adoptionFelt {
+    text-align: center;
+    margin-top: 90px;
+    background-color: var(--darkGreen);
+  }
+
+  .adoptionsprocessFelt {
+    text-align: center;
+    background-color: var(--lightGreen);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: var(--darkGreen);
+  }
+
+  .vejledningFelt {
+    text-align: center;
+    background-color: var(--lightGreen);
+    box-shadow: 30px;
+  }
+
+  .navMenu a {
+    display: block;
+    display: flex;
+    text-decoration: none;
+    color: var(--whiteColor);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navMenu a:hover {
+    background-color: var(--ultraLightGreen);
+  }
+
+  /* BREADCRUMBS */
+  .breadcrumbs {
+    margin-top: 25px;
+    font-family: "Noto Sans", sans-serif;
+  }
+
+  .breadcrumbs a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .breadcrumbs .back {
+    border: 1px solid black;
+    padding: 8px;
+  }
+
+  .breadcrumbs .stay {
+    color: var(--whiteColor);
+    background-color: var(--darkGreen);
+    padding: 8px;
+  }
+
+  .breadcrumbs i {
+    margin-right: 5px;
+  }
+
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+
+  /* SPRING TIL */
+  .springTil {
+    font-family: "Noto Sans", sans-serif;
+    margin-bottom: 25px;
+  }
+
+  .springTil a {
+    text-decoration: none;
+    color: var(--whiteColor);
+    background-color: var(--orangeColor);
+    padding: 8px;
+    border-radius: 2rem;
+  }
+
+  .springTil a:hover {
+    text-decoration: underline;
+  }
+
+  /* TRIN FOR TRIN */
+  .trinForTrinSection h3 {
+    margin-bottom: 35px;
+  }
+
+  .trinForTrin {
+    display: flex;
+    gap: 75px;
+    margin-bottom: 25px;
+  }
+
+  .trinForTrin img {
+    height: 300px;
+    width: 50%;
+    padding: 25px;
+  }
+
+  .trinForTrin p {
+    width: 50%;
+    margin: 0;
+    padding: 25px;
+  }
+
+  .trinOverskrift {
+    font-weight: bold;
+  }
+
+  .greyBackground {
+    max-width: 1130px;
+    margin: 0 auto;
+  }
+
+  .fullWidthBackground {
+    background-color: var(--greyColor);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  /* ACCORDIANS */
+  .accordiansProcess {
+    display: flex;
+    gap: 50px;
+  }
+
+  .faqIntro p,
+  .kravIntro p {
+    margin-bottom: 35px;
+  }
+
+  .accordionStart {
+    font-family: "Noto Sans", sans-serif;
+    color: var(--whiteColor);
+    cursor: pointer;
+    padding-right: 35px;
+    padding-left: 35px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    height: 57px;
+    background-color: var(--lightGreen);
+    margin-bottom: 15px;
+  }
+
+  .contentAccordian {
+    padding: 10px 5px;
+    cursor: pointer;
+    box-shadow: 0 10px 10px rgb(0 0 0 / 0.2);
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-bottom: 25px;
+    max-width: 100%;
+  }
+
+  .active {
+    background-color: var(--darkGreen);
+  }
+
+  /* FOOTER MARGIN */
+  footer {
+    margin-top: 25px;
+  }
+}
+/* adoption side css */
+.archive-main {
+  /* HEADER */
+  .hero-adoption {
+    background-image: url("../img/heroAdoption.jpg");
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    padding: 0 2em;
+    padding-bottom: 4em;
+    color: var(--whiteColor);
+    align-items: center;
+  }
+
+  .hero-adoption h1 {
+    margin-left: 180px;
+  }
+
+  /* INTROTEKST */
+  .introAdoption {
+    display: flex;
+  }
+
+  .introAdoption p {
+    width: 65%;
+  }
+
+  /* NAVIGATIONS MENU */
+  .adoptionFelt a,
+  .adoptionsprocessFelt a,
+  .vejledningFelt a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .adoptionFelt,
+  .adoptionsprocessFelt,
+  .vejledningFelt {
+    height: 100px;
+    width: 300px;
+    color: var(--whiteColor);
+  }
+
+  .adoptionFelt {
+    text-align: center;
+    margin-top: 90px;
+    background-color: var(--darkGreen);
+  }
+
+  .adoptionsprocessFelt {
+    text-align: center;
+    background-color: var(--lightGreen);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: var(--darkGreen);
+  }
+
+  .vejledningFelt {
+    text-align: center;
+    background-color: var(--lightGreen);
+    box-shadow: 30px;
+  }
+
+  .navMenu a {
+    display: block;
+    display: flex;
+    text-decoration: none;
+    color: var(--whiteColor);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navMenu a:hover {
+    background-color: var(--ultraLightGreen);
+  }
+
+  /* FILTER */
+  .dogAndCatFilter {
+    display: flex;
+    gap: 10px;
+  }
+
+  .dogAndCatFilter a {
+    text-decoration: none;
+    color: var(--blackColor);
+  }
+
+  .dyreValg {
+    display: block;
+    height: 50px;
+    width: 100px;
+    background-color: var(--lightGreen);
+    border-radius: 15px;
+    text-align: center;
+  }
+
+  .dyreValg :hover {
+    color: var(--darkGreen);
+  }
+
+  /* SPECIFIKATION FILTER */
+  .filterBox {
+    width: 25%;
+    padding: 20px;
+    background-color: var(--lightGreen);
+    margin-bottom: 25px;
+  }
+  .filterBox form {
+    display: flex;
+    flex-direction: column;
+  }
+  .filterBox legend {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .filterBox label {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+  .filterBox input[type="checkbox"] {
+    margin-left: 10px;
+  }
+  hr {
+    margin: 20px 0;
+    border: 2px solid var(--ultraLightGreen);
+  }
+  button {
+    align-self: start;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--whiteColor);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: var(--orangeColor);
+  }
+
+  .filterSection {
+    display: flex;
+  }
+
+  /* ANIMAL CARDS */
+  .animalCard {
+    background-color: var(--whiteColor);
+    width: 250px;
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    gap: 20px;
+    margin-left: 20px;
+  }
+
+  .animalCard h3 {
+    margin-top: 5px;
+    margin-bottom: 4px;
+  }
+
+  .animalCard p {
+    margin-top: 1px;
+  }
+
+  .animalCard img {
+    width: 250px;
+  }
+
+  .animalCard a {
+    color: var(--blackColor);
+    text-decoration: none;
+  }
+
+  .gender {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .gender i {
+    margin-left: 5px;
+  }
+
+  .animalCard .animalCardInfo {
+    padding: 5px 6px;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-width: 1px;
+    border-color: var(--blackColor);
+  }
+}
+
+/* Vejledning side css */
+.vejledning-main {
+  .hero-dyrpension {
+    background-image: url("../img/hundmedsnor.jpg");
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    padding: 0 2em;
+    padding-bottom: 4em;
+    color: var(--whiteColor);
+    align-items: center;
+  }
+  .hero-dyrpension h1 {
+    margin-left: 180px;
+  }
+  /* INTROTEKST */
+  .introProcess {
+    display: flex;
+  }
+
+  .introProcess p {
+    width: 65%;
+  }
+
+  /* NAVIGATIONS MENU */
+  .adoptionFelt a,
+  .adoptionsprocessFelt a,
+  .vejledningFelt a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .adoptionFelt,
+  .adoptionsprocessFelt,
+  .vejledningFelt {
+    height: 100px;
+    width: 300px;
+    color: var(--whiteColor);
+  }
+
+  .adoptionFelt {
+    text-align: center;
+    margin-top: 90px;
+    background-color: var(--darkGreen);
+  }
+
+  .adoptionsprocessFelt {
+    text-align: center;
+    background-color: var(--lightGreen);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: var(--darkGreen);
+  }
+
+  .vejledningFelt {
+    text-align: center;
+    background-color: var(--lightGreen);
+    box-shadow: 30px;
+  }
+
+  .navMenu a {
+    display: block;
+    display: flex;
+    text-decoration: none;
+    color: var(--whiteColor);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navMenu a:hover {
+    background-color: var(--ultraLightGreen);
+  }
+
+  /* BREADCRUMBS */
+  .breadcrumbs {
+    margin-top: 25px;
+    font-family: "Noto Sans", sans-serif;
+  }
+
+  .breadcrumbs a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .breadcrumbs .back {
+    border: 1px solid black;
+    padding: 8px;
+  }
+
+  .breadcrumbs .stay {
+    color: var(--whiteColor);
+    background-color: var(--darkGreen);
+    padding: 8px;
+  }
+
+  .breadcrumbs i {
+    margin-right: 5px;
+  }
+
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+
+  /* lavet grid til vores artikler */
+
+  .image-grid-artikler {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 3rem;
+  }
+
+  .image-item-artikler {
+    text-align: center;
+  }
+
+  .image-item-artikler img {
+    width: 100%;
+    height: auto;
+    display: block;
+    height: 200px;
+  }
+
+  .image-text-artikler {
+    background-color: #edba83;
+    padding: 10px;
+    color: #272727;
+    margin-bottom: 3rem;
+    font-family: "Noto Sans", sans-serif;
+  }
+  .section-title {
+    grid-column: 3/7;
+  }
+
+  .row-title-artikler {
+    margin: 20px 0;
+  }
+  .gray-background {
+    max-width: 1130px;
+    margin: 0 auto;
+  }
+  .full-width-background {
+    background-color: #e6e6e6;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%); /* Strækker baggrunden ud til begge sider */
+    padding: 20px 0;
+  }
+}

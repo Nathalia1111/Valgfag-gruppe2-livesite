@@ -9,7 +9,7 @@
   <header>
     <nav>
       <div class="header-logo">
-        <a href="index.html">
+        <a href="<?php echo site_url("/forside") ?>">
           <img
             src="<?php echo get_theme_file_uri('/assets/img/sejr--davidsens-high-resolution-logo-transparent.png'); ?>"
             alt="header Logo sejr&davidsen"
@@ -17,13 +17,17 @@
         </a>
       </div>
       <div>
-        <ul class="header-ul">
-          <li><a href="index.php">Forside</a></li>
-          <li><a href="archive-hund.php">Adoption</a></li>
-          <li><a href="<?php echo site_url("/dyrepension") ?>">Dyrepension</a></li>
-          <li><a href="page-traning.php">Adfærdstræning</a></li>
-          <li><a href="#">Ekspertråd</a></li>
-        </ul>
+        <?php
+        wp_nav_menu(array(
+          'theme_location' => 'headerNav',
+          'menu_class' => 'header-ul',
+        ));
+        ?>
       </div>
     </nav>
   </header>
+  <!-- <li><a href="<?php echo site_url("/forside") ?>">Forside</a></li>
+        <li><a href="<?php echo site_url("/adoption") ?>">Adoption</a></li>
+        <li><a href="<?php echo site_url("/dyrepension") ?>">Dyrepension</a></li>
+        <li><a href="<?php echo site_url("/traning") ?>">Adfærdstræning</a></li> -->
+  <!-- <li><a href="#">Ekspertråd</a></li> -->

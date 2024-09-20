@@ -2,16 +2,16 @@
 get_header();
 ?>
 
-<div class="hero-dyrpension">
-  <h1>Dyrepension</h1>
-</div>
 <main class="dyrepension-main">
+  <div class="hero-dyrpension">
+    <h1>Dyrepension</h1>
+  </div>
   <section class="content-dyrepension">
     <div class="content-text-dyrepension">
       <h2>Dit kæledyrs andet hjem </h2>
-      <p>Hos Sejr$davidsen sætter vi dit kæledyrs velvære i første række. Vores dygtige personale sørger for, at dit kæledyr får kærlig pleje, masser af opmærksomhed og et trygt miljø, uanset om det er for en kort eller længere periode. Vi tilbyder rummelige ophold, daglig motion, sunde måltider og individuel omsorg, så du kan tage af sted med ro i sindet og vide, at dit kæledyr er i de bedste hænder.</p>
+      <p>Hos Sejr & Davidsen sætter vi dit kæledyrs velvære i første række. Vores dygtige personale sørger for, at dit kæledyr får kærlig pleje, masser af opmærksomhed og et trygt miljø, uanset om det er for en kort eller længere periode. Vi tilbyder rummelige ophold, daglig motion, sunde måltider og individuel omsorg, så du kan tage af sted med ro i sindet og vide, at dit kæledyr er i de bedste hænder.</p>
     </div>
-    <img src="assets/img/brunHundDerlaaberRezise.jpg" alt="Billede" class="content-image-dyrepension">
+    <img src="<?php echo get_theme_file_uri('/assets/img/brunHundDerlaaberRezise.jpg'); ?>">
   </section>
 
 
@@ -21,27 +21,27 @@ get_header();
     </div>
     <div class="info-grid-dyrepension">
       <div class="info-item-dyrepension">
-        <img src="./assets/img/paw-solid.svg" alt="Ikon">
+        <i class="fa-solid fa-paw"></i>
         <p>Hundepension: Daglig motion, socialisering og individuelle gåture.</p>
       </div>
       <div class="info-item-dyrepension">
-        <img src="./assets/img/paw-solid.svg" alt="Ikon">
+        <i class="fa-solid fa-paw"></i>
         <p>Kattepension: Trygge omgivelser, rolige gemmesteder og masser af kærlighed.</p>
       </div>
       <div class="info-item-dyrepension">
-        <img src="./assets/img/paw-solid.svg" alt="Ikon">
+        <i class="fa-solid fa-paw"></i>
         <p>Andre kæledyr: Vi giver dem trygge og professionelle omgivelser.</p>
       </div>
       <div class="info-item-dyrepension">
-        <img src="./assets/img/paw-solid.svg" alt="Ikon">
+        <i class="fa-solid fa-paw"></i>
         <p>Dagpleje: Har du en lang arbejdsdag? Vi tager os af dit kæledyr i løbet af dagen.</p>
       </div>
       <div class="info-item-dyrepension">
-        <img src="./assets/img/paw-solid.svg" alt="Ikon">
+        <i class="fa-solid fa-paw"></i>
         <p>Overnatninger: Komfort og tryghed hele natten.</p>
       </div>
       <div class="info-item-dyrepension">
-        <img src="./assets/img/paw-solid.svg" alt="Ikon">
+        <i class="fa-solid fa-paw"></i>
         <p>Hentning: Ved hentning vil vi give dig en opdatering om, hvordan dit kæledyr har haft det.</p>
       </div>
     </div>

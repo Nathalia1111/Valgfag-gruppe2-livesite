@@ -4,7 +4,7 @@ get_header();
 <main class="forside-main">
   <section class="forsideHero exception">
     <article class="forsideHeroImg">
-      <img src="./assets/img/forsideHero.jpg" alt="" />
+      <img src="<?php echo get_theme_file_uri('/assets/img/forsideHero.jpg'); ?>" />
     </article>
     <article>
       <h1>Velkommen til Sejr & Davidsens Dyrepension og -internat</h1>
@@ -13,7 +13,7 @@ get_header();
   </section>
   <section class="forsideIntro exception">
     <article class="introImg">
-      <img src="./assets/img/introImg.jpg" alt="" />
+      <img src="<?php echo get_theme_file_uri('/assets/img/introImg.jpg'); ?>" alt="" />
     </article>
     <article>
       <p>
@@ -32,18 +32,41 @@ get_header();
   <section class="forsideDyrTilAdoption">
     <article class="titles">
       <h2>Dyr til adoption</h2>
-      <a href="">Se alle dyrene <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="<?php echo site_url("/adoption") ?>">Se alle dyrene <i class="fa-solid fa-arrow-right"></i></a>
     </article>
 
     <section class="animalCards">
       <article class="animalCard">
-        <a class="animalCard" href="">
-          <img src="./assets/img/catCosmo.jpg" alt="" />
+        <a class="animalCard" href="#">
+          <img src="<?php echo get_theme_file_uri('/assets/img/catCosmo.jpg'); ?>" alt="" />
           <article class="animalCardInfo">
             <h3>Cosmo</h3>
             <div class="gender">
               <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
+            </div>
+          </article>
+        </a>
+      </article>
+
+      <article class="animalCard">
+        <a href="<?php echo site_url("/adoption/charlie") ?>">
+          <img src="<?php echo get_theme_file_uri('/assets/img/goldenRetrieverCharlie.jpg'); ?>" alt="" />
+          <div class="animalCardInfo">
+            <h3>Charlie</h3>
+            <div class="gender">
+              <p>Han</p>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="animalCard">
+        <a href="<?php echo site_url("/adoption/molly") ?>">
+          <img src="<?php echo get_theme_file_uri('/assets/img/pomeranianMolly.jpg'); ?>" alt="" />
+          <article class="animalCardInfo">
+            <h3>Molly</h3>
+            <div class="gender">
+              <p>Tæve</p>
             </div>
           </article>
         </a>
@@ -51,38 +74,11 @@ get_header();
 
       <article class="animalCard">
         <a href="#">
-          <img src="./assets/img/goldenRetrieverCharlie.jpg" alt="" />
-          <div class="animalCardInfo">
-            <h3>Charlie</h3>
-            <div class="gender">
-              <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
-            </div>
-          </div>
-        </a>
-      </article>
-
-      <article class="animalCard">
-        <a href="">
-          <img src="./assets/img/goldenRetrieverCharlie.jpg" alt="" />
-          <article class="animalCardInfo">
-            <h3>Molly</h3>
-            <div class="gender">
-              <p>Tæve</p>
-              <i class="fa-solid fa-venus"></i>
-            </div>
-          </article>
-        </a>
-      </article>
-
-      <article class="animalCard">
-        <a href="">
-          <img src="./assets/img/bunnyPjuske.jpg" alt="" />
+          <img src="<?php echo get_theme_file_uri('/assets/img/bunnyPjuske.jpg'); ?>" alt="" />
           <article class="animalCardInfo">
             <h3>Pjuske</h3>
             <div class="gender">
               <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
             </div>
           </article>
         </a>
@@ -93,20 +89,20 @@ get_header();
     <article class="adoptionFEP mainFocusEntryPoint focusEntryPoint">
       <h3>Adoption</h3>
       <p>Find din nye ven</p>
-      <a class="btn" href="#">Se dyr til adoption</a>
+      <a class="btn" href="<?php echo site_url("/adoption") ?>">Se dyr til adoption</a>
     </article>
 
     <div>
       <article class="treaningFEP smallFocusEntryPoint focusEntryPoint">
         <h3>Træning</h3>
         <p>Skab gode vaner sammen</p>
-        <a class="btn" href="">Start nu</a>
+        <a class="btn" href="<?php echo site_url("/traning") ?>">Start nu</a>
       </article>
 
       <article class="vejledningFEP smallFocusEntryPoint focusEntryPoint">
         <h3>Vejledning</h3>
         <p>Ekspertrådgivning til dyreejere</p>
-        <a class="btn" href="">Læs dem her</a>
+        <a class="btn" href="<?php echo site_url("/vejledning") ?>">Læs dem her</a>
       </article>
     </div>
   </section>

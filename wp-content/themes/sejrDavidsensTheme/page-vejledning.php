@@ -2,9 +2,12 @@
 get_header();
 ?>
 <main class="vejledning-main">
+  <div class="hero-dyrpension">
+    <h1>Vejledning</h1>
+  </div>
   <section class="breadcrumbs">
-    <a class="back" href="./adoption.html"><i class="fa-solid fa-house"></i>Tilbage til adoption</a>
-    <a class="stay" href="./adoptionsprocess.html">Adoptionsprocess</a>
+    <a class="back" href="<?php echo site_url("/adoption") ?>"><i class="fa-solid fa-house"></i>Tilbage til adoption</a>
+    <a class="stay" href="<?php echo site_url("/vejledning") ?>"><?php the_title(); ?></a>
   </section>
   <section class="introProcess">
     <div class="introText">
@@ -17,15 +20,15 @@ get_header();
     </div>
 
     <div class="navMenu">
-      <a href="./adoption.html" class="adoptionFelt">
+      <a href="<?php echo site_url("/adoption") ?>" class="adoptionFelt">
         <h3>Adoption</h3>
       </a>
 
-      <a href="./adoptionsprocess.html" class="adoptionsprocessFelt">
+      <a href="<?php echo site_url("/adoptionsprocess") ?>" class="adoptionsprocessFelt">
         <h3>Adoptionsprocess</h3>
       </a>
 
-      <a href="./vejledning.html" class="vejledningFelt">
+      <a href="<?php echo site_url("/vejledning") ?>" class="vejledningFelt">
         <h3>Vejledning</h3>
       </a>
     </div>
@@ -34,75 +37,87 @@ get_header();
   <section class="image-grid-section">
     <h2 class="row-title-artikler">Det gode match mellem dyr og ejer</h2>
     <div class="image-grid-artikler">
-      <div class="image-item-artikler">
-        <img src="./assets/img/kvindemedgulhund.jpg" alt="Billede 1" />
-        <div class="image-text-artikler">
-          Bliv bedste venner med din hund
-        </div>
-      </div>
-      <div class="image-item-artikler">
-        <img src="./assets/img/Hundgaarmeddreng.jpg" alt="Billede 2" />
-        <div class="image-text-artikler">
-          Få din hund til at spise når du spiser
-        </div>
-      </div>
-      <div class="image-item-artikler">
-        <img src="./assets/img/womanholdingwhitecat.jpg" alt="Billede 3" />
-        <div class="image-text-artikler">
-          Bliv bedste venner med din kat
-        </div>
-      </div>
-    </div>
-    <div class="full-width-background">
-      <div class="gray-background">
-        <h2 class="row-title-artikler">Træningsguider</h2>
+      <?php
+      $args = array(
+        'post_type' => 'article', // Your custom post type slug
+        'posts_per_page' => 3     // Show 3 articles (or adjust as needed)
+      );
+      $query = new WP_Query($args);
 
-        <div class="image-grid-artikler">
+      if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post(); ?>
           <div class="image-item-artikler">
-            <img src="./assets/img/hvidhundmedkvinde.jpg" alt="Billede 4" />
+            <?php if (has_post_thumbnail()) : ?>
+              <div class="image-artikler">
+                <?php the_post_thumbnail('full'); ?>
+              </div>
+            <?php endif; ?>
             <div class="image-text-artikler">
-              Lær din hund at lytte efter dig
+              <h3><?php the_title(); ?></h3>
             </div>
           </div>
-          <div class="image-item-artikler">
-            <img src="./assets/img/hunddertisser.jpg" alt="Billede 5" />
-            <div class="image-text-artikler">
-              Få din hund ikke at tisse indenfor
-            </div>
-          </div>
-          <div class="image-item-artikler">
-            <img src="./assets/img/katdaar.jpg" alt="Billede 6" />
-            <div class="image-text-artikler">
-              Lær din kat hvordan den bruger en kattelem
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php endwhile;
+        wp_reset_postdata();
+      endif;
+      ?>
     </div>
 
-    <h2 class="row-title-artikler">General vejledning</h2>
-
+    <h2 class="row-title-artikler">Træningsguider</h2>
     <div class="image-grid-artikler">
-      <div class="image-item-artikler">
-        <img src="./assets/img/hundmedmand.jpg" alt="Billede 7" />
-        <div class="image-text-artikler">
-          Få din hund til at respektere dig
-        </div>
-      </div>
-      <div class="image-item-artikler">
-        <img src="./assets/img/Hundspisermad.jpg" alt="Billede 8" />
-        <div class="image-text-artikler">
-          Giv din hund en nærig og lækker kost
-        </div>
-      </div>
-      <div class="image-item-artikler">
-        <img src="./assets/img/Katliggerned.jpg" alt="Billede 9" />
-        <div class="image-text-artikler">
-          Lær din kat at dit hjem er dens base
-        </div>
-      </div>
+      <?php
+      $args = array(
+        'post_type' => 'article2', // Your custom post type slug
+        'posts_per_page' => 3     // Show 3 articles (or adjust as needed)
+      );
+      $query = new WP_Query($args);
+
+      if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post(); ?>
+          <div class="image-item-artikler">
+            <?php if (has_post_thumbnail()) : ?>
+              <div class="image-artikler">
+                <?php the_post_thumbnail('full'); ?>
+              </div>
+            <?php endif; ?>
+            <div class="image-text-artikler">
+              <h3><?php the_title(); ?></h3>
+            </div>
+          </div>
+      <?php endwhile;
+        wp_reset_postdata();
+      endif;
+      ?>
+    </div>
+
+    <h2 class="row-title-artikler">General Vejledning</h2>
+    <div class="image-grid-artikler">
+      <?php
+      $args = array(
+        'post_type' => 'article3', // Your custom post type slug
+        'posts_per_page' => 3     // Show 3 articles (or adjust as needed)
+      );
+      $query = new WP_Query($args);
+
+      if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post(); ?>
+          <div class="image-item-artikler">
+            <?php if (has_post_thumbnail()) : ?>
+              <div class="image-artikler">
+                <?php the_post_thumbnail('full'); ?>
+              </div>
+            <?php endif; ?>
+            <div class="image-text-artikler">
+              <h3><?php the_title(); ?></h3>
+            </div>
+          </div>
+      <?php endwhile;
+        wp_reset_postdata();
+      endif;
+      ?>
     </div>
   </section>
+
+
 </main>
 <?php
 get_footer();

@@ -1,10 +1,10 @@
 <?php
 get_header();
 ?>
-<div class="hero-adoption">
-  <h1>Adoption</h1>
-</div>
 <main class="archive-main">
+  <div class="hero-adoption">
+    <h1>Adoption</h1>
+  </div>
   <section class="introAdoption">
     <div class="introText">
       <h2>Adoption</h2>
@@ -33,15 +33,15 @@ get_header();
     </div>
 
     <div class="navMenu">
-      <a href="./adoption.html" class="adoptionFelt">
+      <a href="<?php echo site_url("/adoption") ?>" class="adoptionFelt">
         <h3>Adoption</h3>
       </a>
 
-      <a href="./adoptionsprocess.html" class="adoptionsprocessFelt">
+      <a href="<?php echo site_url("/adoptionsprocess") ?>" class="adoptionsprocessFelt">
         <h3>Adoptionsprocess</h3>
       </a>
 
-      <a href="./vejledning.html" class="vejledningFelt">
+      <a href="<?php echo site_url("/vejledning") ?>" class="vejledningFelt">
         <h3>Vejledning</h3>
       </a>
     </div>
@@ -182,99 +182,21 @@ get_header();
 
     <section class="animalCards">
       <article class="animalCard">
-        <a href="">
-          <img src="./assets/img/COLOURBOX60782640.jpg" alt="" />
-          <article class="animalCardInfo">
-            <h3>Cosmo</h3>
-            <div class="gender">
-              <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
-            </div>
-          </article>
-        </a>
-        <a href="">
-          <img src="./assets/img/COLOURBOX60782640.jpg" alt="" />
-          <article class="animalCardInfo">
-            <h3>Cosmo</h3>
-            <div class="gender">
-              <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
-            </div>
-          </article>
-        </a>
-        <a href="">
-          <img src="./assets/img/COLOURBOX60782640.jpg" alt="" />
-          <article class="animalCardInfo">
-            <h3>Cosmo</h3>
-            <div class="gender">
-              <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
-            </div>
-          </article>
-        </a>
-        <a href="">
-          <img src="./assets/img/COLOURBOX60782640.jpg" alt="" />
-          <article class="animalCardInfo">
-            <h3>Cosmo</h3>
-            <div class="gender">
-              <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
-            </div>
-          </article>
-        </a>
-        <a href="">
-          <img src="./assets/img/COLOURBOX60782640.jpg" alt="" />
-          <article class="animalCardInfo">
-            <h3>Cosmo</h3>
-            <div class="gender">
-              <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
-            </div>
-          </article>
-        </a>
-        <a href="">
-          <img src="./assets/img/COLOURBOX60782640.jpg" alt="" />
-          <article class="animalCardInfo">
-            <h3>Cosmo</h3>
-            <div class="gender">
-              <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
-            </div>
-          </article>
-        </a>
 
-        <a href="">
-          <img src="./assets/img/COLOURBOX60782640.jpg" alt="" />
-          <article class="animalCardInfo">
-            <h3>Cosmo</h3>
-            <div class="gender">
-              <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
-            </div>
-          </article>
-        </a>
-
-        <a href="">
-          <img src="./assets/img/COLOURBOX60782640.jpg" alt="" />
-          <article class="animalCardInfo">
-            <h3>Cosmo</h3>
-            <div class="gender">
-              <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
-            </div>
-          </article>
-        </a>
-
-        <a href="">
-          <img src="./assets/img/COLOURBOX60782640.jpg" alt="" />
-          <article class="animalCardInfo">
-            <h3>Cosmo</h3>
-            <div class="gender">
-              <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
-            </div>
-          </article>
-        </a>
+        <?php while (have_posts()) {
+          the_post();
+        ?>
+          <a href="<?php echo get_the_permalink() ?>">
+            <?php echo get_the_post_thumbnail() ?>
+            <article class="animalCardInfo">
+              <h3><?php the_title(); ?></h3>
+              <div class="gender">
+                <p><?php echo get_field('koen') ?></p>
+              </div>
+            </article>
+          </a>
+        <?php }
+        ?>
       </article>
     </section>
   </section>

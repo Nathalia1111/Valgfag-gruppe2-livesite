@@ -1,6 +1,10 @@
 <?php
 get_header();
 ?>
+
+
+
+
 <main class="hund-main">
   <section class="specificDogInformationContainer">
     <h1><?php echo get_the_title(); ?></h1>
@@ -10,14 +14,31 @@ get_header();
           <?php echo get_the_post_thumbnail(); ?>
         </div>
         <div class=" smallImgs">
-          <img src="./assets/img/goldenRetrieverCharlie.jpg" alt="" />
-          <img src="./assets/img/goldenRetrieverCharlie.jpg" alt="" />
-          <img src="./assets/img/goldenRetrieverCharlie.jpg" alt="" />
+          <?php
+          $billeder = get_field('billeder');
+
+          if ($billeder) {
+            // Check and display 'billede_1'
+            if (!empty($billeder['billede_1'])) {
+              echo '<img src="' . esc_url($billeder['billede_1']) . '"" />';
+            }
+
+            // Check and display 'billede_2'
+            if (!empty($billeder['billede_2'])) {
+              echo '<img src="' . esc_url($billeder['billede_2']) . '"" />';
+            }
+
+            // Check and display 'billede_3'
+            if (!empty($billeder['billede_3'])) {
+              echo '<img src="' . esc_url($billeder['billede_3']) . '"" />';
+            }
+          }
+          ?>
         </div>
       </article>
 
       <article class="container">
-        <h2>Kontakt os omkring Charlie</h2>
+        <h2>Kontakt os omkring <?php the_title() ?></h2>
         <form action="action_page.php">
           <label for="name"></label>
           <input
@@ -80,10 +101,7 @@ get_header();
     <article class="beskrivelse">
       <h4>Beskrivelse:</h4>
       <p>
-        Charlie er en lille, blød golden retriever hvalp, der elsker at
-        udforske verden på sine små gåture. Han er altid fuld af energi, men
-        efter en lang tur falder han hurtigt i søvn, puttet og afslappet.
-        Charlie er kærlig, legesyg og rigtig sød.
+        <?php the_content(); ?>
       </p>
     </article>
   </section>
@@ -97,8 +115,8 @@ get_header();
 
     <section class="animalCards">
       <article class="animalCard">
-        <a class="animalCard" href="">
-          <img src="./assets/img/catCosmo.jpg" alt="" />
+        <a class="animalCard" href="<?php get_the_permalink(); ?>">
+          <img src="<?php echo get_theme_file_uri('/assets/img/catCosmo.jpg'); ?>" alt="" />
           <article class="animalCardInfo">
             <h3>Cosmo</h3>
             <div class="gender">
@@ -110,8 +128,8 @@ get_header();
       </article>
 
       <article class="animalCard">
-        <a href="#">
-          <img src="./assets/img/goldenRetrieverCharlie.jpg" alt="" />
+        <a href="<?php echo site_url("/adoption/charlie") ?>">
+          <img src="<?php echo get_theme_file_uri('/assets/img/goldenRetrieverCharlie.jpg'); ?>" alt="" />
           <div class="animalCardInfo">
             <h3>Charlie</h3>
             <div class="gender">
@@ -123,8 +141,8 @@ get_header();
       </article>
 
       <article class="animalCard">
-        <a href="">
-          <img src="./assets/img/goldenRetrieverCharlie.jpg" alt="" />
+        <a href="<?php echo site_url("/adoption/molly") ?>">
+          <img src="<?php echo get_theme_file_uri('/assets/img/pomeranianMolly.jpg'); ?>" alt="" />
           <article class="animalCardInfo">
             <h3>Molly</h3>
             <div class="gender">
@@ -137,7 +155,7 @@ get_header();
 
       <article class="animalCard">
         <a href="">
-          <img src="./assets/img/bunnyPjuske.jpg" alt="" />
+          <img src="<?php echo get_theme_file_uri('/assets/img/bunnyPjuske.jpg'); ?>" alt="" />
           <article class="animalCardInfo">
             <h3>Pjuske</h3>
             <div class="gender">
@@ -150,7 +168,6 @@ get_header();
     </section>
   </section>
 </main>
-
 <?php
 get_footer();
 ?>

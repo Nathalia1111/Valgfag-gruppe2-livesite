@@ -29,5 +29,4 @@
         ?>
       </div>
     </nav>
-        <li><a href="<?php echo site_url("/traning") ?>">Adfærdstræning</a></li> -->
-  <!-- <li><a href="#">Ekspertråd</a></li> -->
+  </header>

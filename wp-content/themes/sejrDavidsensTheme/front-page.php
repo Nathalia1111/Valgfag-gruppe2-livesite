@@ -1,4 +1,5 @@
 <?php
+// henter vores header fra header.php
 get_header();
 ?>
 <main class="forside-main">
@@ -38,7 +39,7 @@ get_header();
     <section class="animalCards">
       <article class="animalCard">
         <a class="animalCard" href="#">
-          <img src="<?php echo get_theme_file_uri('/assets/img/catCosmo.jpg'); ?>" alt="" />
+          <img src="<?php echo get_theme_file_uri('/assets/img/catCosmo.jpg'); ?>" loading="lazy" alt="en kat der ligger ned" />
           <article class="animalCardInfo">
             <h3>Cosmo</h3>
             <div class="gender">
@@ -50,7 +51,7 @@ get_header();
 
       <article class="animalCard">
         <a href="<?php echo site_url("/adoption/charlie") ?>">
-          <img src="<?php echo get_theme_file_uri('/assets/img/goldenRetrieverCharlie.jpg'); ?>" alt="" />
+          <img src="<?php echo get_theme_file_uri('/assets/img/goldenRetrieverCharlie.jpg'); ?>" loading="lazy" alt="en hvid golden retriever der ligger i en grå hundeseng" />
           <div class="animalCardInfo">
             <h3>Charlie</h3>
             <div class="gender">
@@ -62,7 +63,7 @@ get_header();
 
       <article class="animalCard">
         <a href="<?php echo site_url("/adoption/molly") ?>">
-          <img src="<?php echo get_theme_file_uri('/assets/img/pomeranianMolly.jpg'); ?>" alt="" />
+          <img src="<?php echo get_theme_file_uri('/assets/img/pomeranianMolly.jpg'); ?>" loading="lazy" alt="en pomeranian der sidder udenfor" />
           <article class="animalCardInfo">
             <h3>Molly</h3>
             <div class="gender">
@@ -74,7 +75,7 @@ get_header();
 
       <article class="animalCard">
         <a href="#">
-          <img src="<?php echo get_theme_file_uri('/assets/img/bunnyPjuske.jpg'); ?>" alt="" />
+          <img src="<?php echo get_theme_file_uri('/assets/img/bunnyPjuske.jpg'); ?>" loading="lazy" alt="en grå og brun kanin" />
           <article class="animalCardInfo">
             <h3>Pjuske</h3>
             <div class="gender">
@@ -164,5 +165,6 @@ get_header();
 </main>
 
 <?php
+// henter vores footer fra footer.php
 get_footer();
 ?>

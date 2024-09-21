@@ -3,6 +3,7 @@
 function sejrdavidsens_post_types()
 {
   // Hund Post Type
+  //  Funktionen register_post_type opretter en ny type indhold vi har kaldt for 'hund'. Den bruges til at oprette hunde posts i WordPress, ligesom man normalt vil gøre med pages og posts.
   register_post_type('hund', array(
     'show_in_rest' => true,
     'has_archive' => true,

@@ -112,15 +112,15 @@ get_header();
 
     <div>
       <article class="treaningFEP smallFocusEntryPoint focusEntryPoint">
-        <h3>Træning</h3>
-        <p>Skab gode vaner sammen</p>
-        <a class="btn" href="">Start nu</a>
+        <h3>Kattepension</h3>
+        <p>Find din nye ven</p>
+        <a class="btn" href="#">Se kattepensionen</a>
       </article>
 
       <article class="vejledningFEP smallFocusEntryPoint focusEntryPoint">
-        <h3>Vejledning</h3>
-        <p>Ekspertrådgivning til dyreejere</p>
-        <a class="btn" href="">Læs dem her</a>
+        <h3>Andre Kæledyr</h3>
+        <p>Find din nye ven</p>
+        <a class="btn" href="#">Ring og høre mere</a>
       </article>
     </div>
   </section>

@@ -38,82 +38,96 @@ get_header();
     <h2 class="row-title-artikler">Det gode match mellem dyr og ejer</h2>
     <div class="image-grid-artikler">
       <?php
+      // Vores kode henter og viser de tre nyeste posts fra vores custom post type. For hvert post vises en thumbnail og titlen.
+      // Navnet args bruger man når man skal lave en liste af argumenter i form af en array.
+
+      //  Vores custom query henter posts fra vores custom post type article og begrænser antallet til 3 posts.
       $args = array(
-        'post_type' => 'article', // Your custom post type slug
-        'posts_per_page' => 3     // Show 3 articles (or adjust as needed)
+        'post_type' => 'article',
+        'posts_per_page' => 3
       );
       $query = new WP_Query($args);
 
-      if ($query->have_posts()) :
-        while ($query->have_posts()) : $query->the_post(); ?>
+      // Den tjekker om der er nogen posts i vores custom query. Hvis der er, så fortsætter den med at vise indholdet.
+      if ($query->have_posts()) {
+
+        // Vores while loop går igennem vores posts og viser inholdet for hver vores custom query finder.
+        while ($query->have_posts()) {
+          $query->the_post(); ?>
           <div class="image-item-artikler">
-            <?php if (has_post_thumbnail()) : ?>
+            <?php if (has_post_thumbnail()) { ?>
               <div class="image-artikler">
                 <?php the_post_thumbnail('full'); ?>
               </div>
-            <?php endif; ?>
+            <?php } ?>
             <div class="image-text-artikler">
               <h3><?php the_title(); ?></h3>
             </div>
           </div>
-      <?php endwhile;
+      <?php }
+        // wp_reset_postdata() nulstiller vores data, så andre dele af vores hjemmeside ikke bliver påvirket.
         wp_reset_postdata();
-      endif;
+      }
       ?>
+
     </div>
 
     <h2 class="row-title-artikler">Træningsguider</h2>
     <div class="image-grid-artikler">
       <?php
       $args = array(
-        'post_type' => 'article2', // Your custom post type slug
-        'posts_per_page' => 3     // Show 3 articles (or adjust as needed)
+        'post_type' => 'article2',
+        'posts_per_page' => 3
       );
       $query = new WP_Query($args);
 
-      if ($query->have_posts()) :
-        while ($query->have_posts()) : $query->the_post(); ?>
+      if ($query->have_posts()) {
+        while ($query->have_posts()) {
+          $query->the_post(); ?>
           <div class="image-item-artikler">
-            <?php if (has_post_thumbnail()) : ?>
+            <?php if (has_post_thumbnail()) { ?>
               <div class="image-artikler">
                 <?php the_post_thumbnail('full'); ?>
               </div>
-            <?php endif; ?>
+            <?php } ?>
             <div class="image-text-artikler">
               <h3><?php the_title(); ?></h3>
             </div>
           </div>
-      <?php endwhile;
+      <?php }
         wp_reset_postdata();
-      endif;
+      }
       ?>
+
     </div>
 
     <h2 class="row-title-artikler">General Vejledning</h2>
     <div class="image-grid-artikler">
       <?php
       $args = array(
-        'post_type' => 'article3', // Your custom post type slug
-        'posts_per_page' => 3     // Show 3 articles (or adjust as needed)
+        'post_type' => 'article3',
+        'posts_per_page' => 3
       );
       $query = new WP_Query($args);
 
-      if ($query->have_posts()) :
-        while ($query->have_posts()) : $query->the_post(); ?>
+      if ($query->have_posts()) {
+        while ($query->have_posts()) {
+          $query->the_post(); ?>
           <div class="image-item-artikler">
-            <?php if (has_post_thumbnail()) : ?>
+            <?php if (has_post_thumbnail()) { ?>
               <div class="image-artikler">
                 <?php the_post_thumbnail('full'); ?>
               </div>
-            <?php endif; ?>
+            <?php } ?>
             <div class="image-text-artikler">
               <h3><?php the_title(); ?></h3>
             </div>
           </div>
-      <?php endwhile;
+      <?php }
         wp_reset_postdata();
-      endif;
+      }
       ?>
+
     </div>
   </section>
 

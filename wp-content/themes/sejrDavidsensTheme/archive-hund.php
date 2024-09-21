@@ -33,6 +33,7 @@ get_header();
     </div>
 
     <div class="navMenu">
+      <!-- Her fortæller vi hvilken side den skal linke til -->
       <a href="<?php echo site_url("/adoption") ?>" class="adoptionFelt">
         <h3>Adoption</h3>
       </a>
@@ -183,14 +184,19 @@ get_header();
     <section class="animalCards">
       <article class="animalCard">
 
+        <!-- Vi har et while lopp der siger: så længe der er posts i vores custom post type, så skal den vise indholdet af posten og så genere den strukturen af den.-->
         <?php while (have_posts()) {
           the_post();
         ?>
+          <!-- get_the_permalink får url'en til den konkrette post.  -->
           <a href="<?php echo get_the_permalink() ?>">
+            <!-- get_the_post_thumbnail får postens thumbnail.  -->
             <?php echo get_the_post_thumbnail() ?>
             <article class="animalCardInfo">
+              <!-- the_title får postens titel  -->
               <h3><?php the_title(); ?></h3>
               <div class="gender">
+                <!-- get_field('køn') får hvilket køn hunden har fra vores ACF -->
                 <p><?php echo get_field('koen') ?></p>
               </div>
             </article>

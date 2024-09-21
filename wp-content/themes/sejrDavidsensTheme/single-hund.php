@@ -2,9 +2,6 @@
 get_header();
 ?>
 
-
-
-
 <main class="hund-main">
   <section class="specificDogInformationContainer">
     <h1><?php echo get_the_title(); ?></h1>
@@ -15,20 +12,20 @@ get_header();
         </div>
         <div class=" smallImgs">
           <?php
+          // Vores kode henter vores gruppe "Billeder" der ligger i vores ACF, som indeholder flere billeder. Den viser billederne et ad gangen, hvis de findes. 
           $billeder = get_field('billeder');
 
           if ($billeder) {
-            // Check and display 'billede_1'
+            // hvis billede_1 er ikke tomt, så vises billedet
+            // ! = not/ikke
             if (!empty($billeder['billede_1'])) {
               echo '<img src="' . esc_url($billeder['billede_1']) . '"" />';
             }
 
-            // Check and display 'billede_2'
             if (!empty($billeder['billede_2'])) {
               echo '<img src="' . esc_url($billeder['billede_2']) . '"" />';
             }
 
-            // Check and display 'billede_3'
             if (!empty($billeder['billede_3'])) {
               echo '<img src="' . esc_url($billeder['billede_3']) . '"" />';
             }
@@ -101,6 +98,7 @@ get_header();
     <article class="beskrivelse">
       <h4>Beskrivelse:</h4>
       <p>
+        <!-- Her bruger vi funktionen the_content() til at hente vores indhold -->
         <?php the_content(); ?>
       </p>
     </article>
@@ -110,18 +108,17 @@ get_header();
     <h2>Andre der søger et hjem</h2>
     <div class="titles">
       <p>Mød flere søde dyr der venter</p>
-      <a href="">Se alle dyrene <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="<?php echo site_url("/adoption") ?>">Se alle dyrene <i class="fa-solid fa-arrow-right"></i></a>
     </div>
 
     <section class="animalCards">
       <article class="animalCard">
-        <a class="animalCard" href="<?php get_the_permalink(); ?>">
-          <img src="<?php echo get_theme_file_uri('/assets/img/catCosmo.jpg'); ?>" alt="" />
+        <a class="animalCard" href="#">
+          <img src="<?php echo get_theme_file_uri('/assets/img/catCosmo.jpg'); ?>" loading="lazy" alt="en kat der ligger ned" />
           <article class="animalCardInfo">
             <h3>Cosmo</h3>
             <div class="gender">
               <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
             </div>
           </article>
         </a>
@@ -129,12 +126,11 @@ get_header();
 
       <article class="animalCard">
         <a href="<?php echo site_url("/adoption/charlie") ?>">
-          <img src="<?php echo get_theme_file_uri('/assets/img/goldenRetrieverCharlie.jpg'); ?>" alt="" />
+          <img src="<?php echo get_theme_file_uri('/assets/img/goldenRetrieverCharlie.jpg'); ?>" loading="lazy" alt="en hvid golden retriever der ligger i en grå hundeseng" />
           <div class="animalCardInfo">
             <h3>Charlie</h3>
             <div class="gender">
               <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
             </div>
           </div>
         </a>
@@ -142,25 +138,23 @@ get_header();
 
       <article class="animalCard">
         <a href="<?php echo site_url("/adoption/molly") ?>">
-          <img src="<?php echo get_theme_file_uri('/assets/img/pomeranianMolly.jpg'); ?>" alt="" />
+          <img src="<?php echo get_theme_file_uri('/assets/img/pomeranianMolly.jpg'); ?>" loading="lazy" alt="en pomeranian der sidder udenfor" />
           <article class="animalCardInfo">
             <h3>Molly</h3>
             <div class="gender">
               <p>Tæve</p>
-              <i class="fa-solid fa-venus"></i>
             </div>
           </article>
         </a>
       </article>
 
       <article class="animalCard">
-        <a href="">
-          <img src="<?php echo get_theme_file_uri('/assets/img/bunnyPjuske.jpg'); ?>" alt="" />
+        <a href="#">
+          <img src="<?php echo get_theme_file_uri('/assets/img/bunnyPjuske.jpg'); ?>" loading="lazy" alt="en grå og brun kanin" />
           <article class="animalCardInfo">
             <h3>Pjuske</h3>
             <div class="gender">
               <p>Han</p>
-              <i class="fa-solid fa-mars"></i>
             </div>
           </article>
         </a>

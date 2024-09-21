@@ -7,6 +7,7 @@ get_header();
   </div>
 
   <section class="breadcrumbs">
+    <!-- Breadcrumbs er hard coded til at simulere child parent page relationship -->
     <a class="back" href="<?php echo site_url("/adoption") ?>"><i class="fa-solid fa-house"></i>Tilbage til adoption</a>
     <a class="stay" href="<?php echo site_url("/adoptionsprocess") ?>"><?php the_title(); ?></a>
   </section>
@@ -24,6 +25,7 @@ get_header();
     </div>
 
     <div class="navMenu">
+       <!-- navMenu er hard coded til at simulere child parent page relationship -->
       <a href="<?php echo site_url("/adoption") ?>" class="adoptionFelt">
         <h3>Adoption</h3>
       </a>
@@ -55,7 +57,7 @@ get_header();
           'post_type' => 'trin-for-trin',
           'posts_per_page' => -1,
           'order' => 'ASC',
-          'orderby' => 'title'
+          'orderby' => 'menu_order'
         );
         $query = new WP_Query($args);
 

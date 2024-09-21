@@ -18,9 +18,10 @@
     </div>
   </article>
   <article>
-    <a href="#"><img
+    <!-- funktionen get_theme_file_uri hjælper med at finde den fil der ligger i temaets mappe. Her bruger vi det til at finde vores billede -->
+    <a href="<?php echo site_url("/forside") ?>"><img
         class="logo"
-        src="./assets/img/sejr--davidsens-high-resolution-logo-transparent.png"
+        src="<?php echo get_theme_file_uri('/assets/img/sejr--davidsens-high-resolution-logo-transparent.png'); ?>"
         alt="" /></a>
   </article>
   <article class="socialMedia">
@@ -30,6 +31,7 @@
   </article>
 </footer>
 
+<!-- Her sætter vi Wordpress til at styre vores footer -->
 <?php wp_footer() ?>
 </body>
 
